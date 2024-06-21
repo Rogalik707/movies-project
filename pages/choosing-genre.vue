@@ -34,9 +34,12 @@ watch(namesArray, (newVal: any) => {
         :namesArray="namesArray"
       />
     </div>
-    <div>
-      <v-btn variant="plain">
-        Button
+    <div
+      v-if="namesArray.length === 3"
+      class="btn-wrapper"
+    >
+      <v-btn class="btn" color="#FFFFFF">
+        Accept
       </v-btn>
     </div>
   </div>
@@ -63,7 +66,6 @@ watch(namesArray, (newVal: any) => {
 }
 
 .cards-list {
-  position: relative;
   width: 30%;
   display: grid;
   margin: 50px auto 0 auto;
@@ -71,5 +73,16 @@ watch(namesArray, (newVal: any) => {
   grid-template-rows: repeat(2, 1fr);
   gap: 15px;
   z-index: 10;
+}
+
+.btn-wrapper {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.btn {
 }
 </style>
